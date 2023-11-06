@@ -26,12 +26,12 @@ jobs:
             name: dotnet-results-${{ matrix.dotnet-version }}
             path: "test-result.xml"
           # Use always() to always run this step to publish test results when there are test failures
-          if: ${{ always() }}
+          #if: ${{ always() }}
         - name: Parse_Results
-          run: for file in $( find  -type f -name "*.xml")
+          run: for file "test-result.xml"
                do
                echo -e "Working on file -----------------------------------> $file"
-               Parser_Response=$(curl --request POST https://pulse-13.qtestnet.com/webhook/9c276f29-0b44-43bd-9363-b4bc436f57c5 -d projectId="9655" -d testcycle="55152" -d "result=$(echo $(cat $file) | basenc --base64url | tr -d \\n)" )             
+               Parser_Response=$(curl --request POST https://pulse-13.qtestnet.com/webhook/9c276f29-0b44-43bd-9363-b4bc436f57c5 -d "projectId=9655" -d "testcycle=55152" -d "result=$(echo $(cat $file) | basenc --base64url | tr -d \\n)" )             
                done
            
             
