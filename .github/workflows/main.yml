@@ -33,4 +33,5 @@ jobs:
               do
              echo -e "Working on file -----------------------------------> $file"
              Parser_Response=$(curl --request POST https://pulse-13.qtestnet.com/webhook/9c276f29-0b44-43bd-9363-b4bc436f57c5 -d projectId="9655" -d testcycle="55152" -d "result=$(echo $(cat $file) | basenc --base64url | tr -d \\n)" )             
-           done 
+           done
+           
