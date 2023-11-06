@@ -36,7 +36,7 @@ jobs:
                 for file in $( find  -type f -name "*.xml")
                 do
                    echo -e "Working on file -----------------------------------> $file"
-                   Parser_Response = $(curl --request POST $qTestPULSEURL -d "projectId=$qTestProject" -d "testcycle=$NewTestCycle" -d "result=$(echo $(cat $file) | basenc --base64url | tr -d \\n)" )             
+                   Parser_Response = $(curl --X POST $qTestPULSEURL -d "projectId=$qTestProject" -d "testcycle=$NewTestCycle" -d "result=$(echo $(cat $file) | basenc --base64url | tr -d \\n)" )             
                 done
            
            
