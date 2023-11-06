@@ -26,8 +26,7 @@ jobs:
             name: dotnet-results-${{ matrix.dotnet-version }}
             path: "test-result.xml"
           # Use always() to always run this step to publish test results when there are test failures
-            if: ${{ always() }}
-       
+            #if: ${{ always() }}
           env:
                 NewTestCycle: 55152
                 qTestProject: 9655
