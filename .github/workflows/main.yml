@@ -33,11 +33,13 @@ jobs:
                 qTestProject: 9655
                 qTestPULSEURL: https://pulse-13.qtestnet.com/webhook/9c276f29-0b44-43bd-9363-b4bc436f57c5
           run: |
-                for file in $( find  -type f -name "*.xml")
+                for file in $( find -type f -name "*.xml")
                 do
-                   echo -e "Working on file -----------------------------------> $file"
-                   Parser_Response = $(curl --X POST $qTestPULSEURL -d "projectId=$qTestProject" -d "testcycle=$NewTestCycle" -d "result=$(echo $(cat $file) | basenc --base64url | tr -d \\n)" )             
+                  echo -e "Working on file -----------------------------------> $file"
+                  Parser_Response=$(curl --request POST $qTestPULSEURL -d "projectId=$qTestProject" -d "testcycle=$NewTestCycle" -d "result=$(echo $(cat $file) | basenc --base64url | tr -d \\n)" )             
                 done
+
+                
            
            
             
