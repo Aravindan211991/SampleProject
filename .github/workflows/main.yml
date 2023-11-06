@@ -16,7 +16,7 @@ jobs:
           uses: actions/setup-dotnet@v3
           with:
             dotnet-version: '6.x'
-        - name: Install dependencies
+        - name: Instal dependencies
           run: dotnet restore
         - name: Test with dotnet test
           run: dotnet test "SampleProject.csproj" --no-build --verbosity normal --logger:"junit;LogFilePath=test-result.xml"
