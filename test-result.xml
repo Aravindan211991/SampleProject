@@ -1,8 +1,8 @@
 <testsuites>
-  <testsuite name="SampleProject.dll" tests="2" skipped="0" failures="0" errors="0" time="0.0370874" timestamp="2023-12-13T10:28:53" hostname="fv-az1432-313" id="0" package="SampleProject.dll">
+  <testsuite name="SampleProject.dll" tests="2" skipped="0" failures="0" errors="0" time="0.0397379" timestamp="2023-12-13T10:31:54" hostname="fv-az1148-512" id="0" package="SampleProject.dll">
     <properties />
-    <testcase classname="SampleProject.TestUserLoginFeature" name="VerifyThatUserIsAbleToLoginWithValidCredentials" time="0.0358049" />
-    <testcase classname="SampleProject.TestUserLoginFeature" name="VerifyThatIsNotAbleToLoginWithInvalidCredentials" time="0.0012825" />
+    <testcase classname="SampleProject.TestUserLoginFeature" name="VerifyThatUserIsAbleToLoginWithValidCredentials" time="0.0382766" />
+    <testcase classname="SampleProject.TestUserLoginFeature" name="VerifyThatIsNotAbleToLoginWithInvalidCredentials" time="0.0014613" />
     <system-out>Given User enters 'Aravindan' and 'Kaiv'
 -&gt; done: TestUserLoginStepDefinitions.GivenUserEntersAnd("Aravindan", "Kaiv") (0.0s)
 When User clicks on login
@@ -20,10 +20,10 @@ Then Response should be false
 
 Test Framework Informational Messages:
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.5+1caef2f33e (64-bit .NET 6.0.25)
-[xUnit.net 00:00:01.91]   Discovering: SampleProject
-[xUnit.net 00:00:01.97]   Discovered:  SampleProject
-[xUnit.net 00:00:01.97]   Starting:    SampleProject
-[xUnit.net 00:00:02.28]   Finished:    SampleProject
+[xUnit.net 00:00:01.44]   Discovering: SampleProject
+[xUnit.net 00:00:01.51]   Discovered:  SampleProject
+[xUnit.net 00:00:01.51]   Starting:    SampleProject
+[xUnit.net 00:00:01.83]   Finished:    SampleProject
 </system-out>
     <system-err></system-err>
   </testsuite>
