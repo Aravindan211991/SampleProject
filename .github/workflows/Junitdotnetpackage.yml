@@ -38,12 +38,8 @@ jobs:
           run: |
                 curl -u "aravindankaivall_PNYOyz:2BLy51auFkVfaKgDv6jk" -vvv \
                      -X POST \
-                     -F 'data=@"/Users/testUser/junit_report.xml"' \
+                     -F 'data=@"/test-result.xml"' \
                      -F "projectName=Junit report uploads" \
                      -F "buildName=Observability Sample" \
-                     -F "buildIdentifier=Your Build Identifier" \
-                     -F "tags=junit_upload, regression" \
-                     -F "ci=http://localhost:8080/" \
-                     -F "frameworkVersion=mocha, 10.0.0" \
                 https://upload-observability.browserstack.com/upload
     
