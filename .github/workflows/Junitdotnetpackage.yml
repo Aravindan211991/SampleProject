@@ -30,8 +30,8 @@ jobs:
             #if: ${{ always() }}
         - name: git action adding test report
           run: |
-               git config --global user.email "sulagna.chakraborty@onbe.com"
-               git config --global user.name "Sulagna Chakraborty"
+               git config --global user.email "aravindan.kaivalliam@onbe.com"
+               git config --global user.name "Aravindan211991"
                git commit -a -m "Adding Latest Junit Report file"
                git push   
         - name: Upload Junit results in BrowserStack
