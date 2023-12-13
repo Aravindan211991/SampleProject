@@ -1,0 +1,44 @@
+
+name: Junit dotnet package
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet-version: [ '6.0.x' ]
+
+    steps:
+        - uses: actions/checkout@v4
+        - name: Setup .NET 6.x
+          uses: actions/setup-dotnet@v3
+          with:
+            dotnet-version: '6.x'
+        - name: Install dependencies
+          run: dotnet restore
+        - name: Test with dotnet test
+          run: dotnet test "SampleProject.csproj" --no-build --verbosity normal --logger:"junit;LogFilePath=test-result.xml"
+        - name: Upload dotnet test results
+          uses: actions/upload-artifact@v3
+          with:
+            name: dotnet-results-${{ matrix.dotnet-version }}
+            path: "test-result.xml"
+          # Use always() to always run this step to publish test results when there are test failures
+            #if: ${{ always() }}
+        - name: git action adding test report
+          run: |
+               git config --global user.email "sulagna.chakraborty@onbe.com"
+               git config --global user.name "Sulagna Chakraborty"
+               git commit -a -m "Adding Latest Junit Report file"
+               git push   
+        - name: Upload Junit results in BrowserStack
+          run: |
+                curl -u "sulagnachakrabor_hF8bLJ:1bt4ji6nzS6ALopzMHZq" -vvv \
+                -X POST https://upload-observability.browserstack.com/upload \
+                -F "data=test-result.xml" \
+                -F "projectName=Junit report uploads" \
+                -F "buildName=Observability Sample Testing Upload" \
+    
