@@ -41,5 +41,7 @@ jobs:
                      -F 'data=@"test-result.xml"' \
                      -F "projectName=Junit report uploads" \
                      -F "buildName=Observability Sample" \
-                https://upload-observability.browserstack.com/upload
+                https://upload-observability.browserstack.com/upload > file.txt
+
+        
     
