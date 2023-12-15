@@ -52,7 +52,7 @@ jobs:
                git push 
 
         - name: Search for sub-string in file and save to variable
-          run: MY_VAR=$(grep -oP "(?<=https://observability.browserstack.com/builds).*?(?=})" file.txt)
+          run: MY_VAR=$(grep -o 'https://observability.browserstack.com/builds.*}' file.txt)
           env:
             MY_VAR: ${{ steps.search-for-substring.outputs.my-var }}
             
