@@ -55,6 +55,11 @@ jobs:
           run: MY_VAR=$(grep "^https://observability.browserstack.com/builds" file.txt)
           env:
             MY_VAR: ${{ steps.search-for-string.outputs.my-var }}
+
+        - name: Search for sub-string between "https://observability.browserstack.com/builds" and ""}" in file and save to variable
+          run: MY_VAR=$(grep -o "https://observability.browserstack.com/builds.*\"}" file.txt)
+          env:
+            MY_VAR: ${{ steps.search-for-substring.outputs.my-var }}
             
         - name: Print variable
           run: echo $MY_VAR
