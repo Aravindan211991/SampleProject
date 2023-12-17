@@ -56,10 +56,11 @@ jobs:
                my_var=$(grep -oP '(?<=seconds).*?(?=})' file.txt)
                echo "Browserstack TO link: " $my_var
 
-        - name: Remove double quotes to get the final Browserstack TO variable
+        - name: Remove double quotes
           run: |
-               browserstack_TO_Link=$(echo "$my_var" | sed 's/"//g')
-               echo "Browserstack Test Observability link: " $browserstack_TO_Link"
+               browserstack_test_observability_link=$(echo "$my_var" | tr -d '"')
+               echo "Browserstack test observability link is : " $browserstack_test_observability_link
+               
 
         
     
