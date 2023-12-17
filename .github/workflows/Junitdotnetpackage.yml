@@ -51,12 +51,17 @@ jobs:
                git commit -a -m "Adding file.txt"
                git push 
 
-        - name: Storing browserstack test observability link in a variable to be used in the next job
+        - name: Storing browserstack test observability link in a variable
           run: |
                my_var=$(grep -oP '(?<=seconds).*?(?=})' file.txt)
                final_browserstack_test_observability_link=$(echo "$my_var" | tr -d '"')
                echo "Browserstack test observability link is : " $final_browserstack_test_observability_link
-               echo "::set-output name=final_browserstack_test_observability_link::$final_browserstack_test_observability_link"
+               env:
+                FINAL_BROWSERSTACK_TEST_OBSERVABILITY_LINK: $final_browserstack_test_observability_link
+
+        - name: Using browserstack test observability link in another run
+          run: |
+               echo "The value of FINAL_BROWSERSTACK_TEST_OBSERVABILITY_LINK is $FINAL_BROWSERSTACK_TEST_OBSERVABILITY_LINK"
 
                
                
