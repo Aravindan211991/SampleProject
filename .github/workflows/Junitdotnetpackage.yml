@@ -58,6 +58,7 @@ jobs:
 
         - name: Remove double quotes
           run: |
+               browserstack_test_observability_link=$my_var
                browserstack_test_observability_link=$(echo "$my_var" | tr -d '"')
                echo "Browserstack test observability link is : " $browserstack_test_observability_link
                
