@@ -54,7 +54,6 @@ jobs:
         - name: Search for substring in the file and print it
           run: |
                my_var=$(grep -oP '(?<=seconds).*?(?=})' file.txt)
-               echo "Browserstack TO link: " $my_var
                final_browserstack_test_observability_link=$(echo "$my_var" | tr -d '"')
                echo "Browserstack test observability link is : " $final_browserstack_test_observability_link
 
