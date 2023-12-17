@@ -51,10 +51,10 @@ jobs:
                git commit -a -m "Adding file.txt"
                git push 
 
-        - name: Search for sub-string in file and save to variable
-          run: MY_VAR=$(grep -o 'https://observability.browserstack.com/builds.*}' file.txt)
-          env:
-            MY_VAR: ${{ steps.search-for-substring.outputs.my-var }}
+        - name: Search for substring
+          run: |
+               my_var=$(grep -oP '(?<=seconds).*?(?=})' file.txt)
+               echo $my_var
             
         - name: Print variable
           run: echo $MY_VAR
