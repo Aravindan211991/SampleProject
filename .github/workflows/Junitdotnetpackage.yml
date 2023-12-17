@@ -51,12 +51,10 @@ jobs:
                git commit -a -m "Adding file.txt"
                git push 
 
-        - name: Search for substring
+        - name: Search for substring in the file and print it
           run: |
                my_var=$(grep -oP '(?<=seconds).*?(?=})' file.txt)
                echo $my_var
-            
-        - name: Print variable
-          run: echo $MY_VAR
+
         
     
