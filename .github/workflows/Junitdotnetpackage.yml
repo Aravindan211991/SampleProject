@@ -56,24 +56,7 @@ jobs:
                my_var=$(grep -oP '(?<=seconds).*?(?=})' file.txt)
                final_browserstack_test_observability_link=$(echo "$my_var" | tr -d '"')
                echo "Browserstack test observability link is : " $final_browserstack_test_observability_link
-               
-        - name: Get Jira issue key
-          id: get-issue-key
-          run: |
-               echo "::set-output name=issue-key::$(echo ${{ github.event.pull_request.title }} | sed 's/^\\[\\(\\w\\+-\\d+\\)\\].*/\\1/')"
-        # Get the Jira issue key from the pull request title
-          
 
-        - name: Update Jira issue with link
-          uses: atlassian/gajira-update-issue@v1
-          with:
-          server-url: ${{ secrets.JIRA_SERVER_URL }}
-          username: ${{ secrets.JIRA_USERNAME }}
-          api-token: ${{ secrets.JIRA_API_TOKEN }}
-          issue-key: ${{ steps.get-issue-key.outputs.issue-key }}
-          comment: |
-          This pull request includes a BrowserStack test run:
-          [BrowserStack test observability link] (${BROWSERSTACK_OBSERVABILITY_LINK})
 
                
                
