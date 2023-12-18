@@ -56,39 +56,24 @@ jobs:
                my_var=$(grep -oP '(?<=seconds).*?(?=})' file.txt)
                final_browserstack_test_observability_link=$(echo "$my_var" | tr -d '"')
                echo "Browserstack test observability link is : " $final_browserstack_test_observability_link
-               echo "::set-env name=FINAL_BROWSERSTACK_TEST_OBSERVABILITY_LINK::$final_browserstack_test_observability_link"
-
-        - name: Using browserstack test observability link in another run
+               
+        - name: Get Jira issue key
+          id: get-issue-key
           run: |
-               echo "The value of FINAL_BROWSERSTACK_TEST_OBSERVABILITY_LINK is $FINAL_BROWSERSTACK_TEST_OBSERVABILITY_LINK"
-
-               - name: Run BrowserStack tests
-          env:
-            BROWSERSTACK_USERNAME: ${{ secrets.BROWSERSTACK_USERNAME }}
-            BROWSERSTACK_ACCESS_KEY: ${{ secrets.BROWSERSTACK_ACCESS_KEY }}
-           run: |
-                 export BROWSERSTACK_OBSERVABILITY_LINK="https://www.browserstack.com/automate/builds/1234567890abcdef12345678/sessions/0987654321abcdef09876543"
-        # Run your BrowserStack tests here
-        # Save the test observability link to an environment variable
-                
-
-    - name: Get Jira issue key
-      id: get-issue-key
-      run: |
+               echo "::set-output name=issue-key::$(echo ${{ github.event.pull_request.title }} | sed 's/^\\[\\(\\w\\+-\\d+\\)\\].*/\\1/')"
         # Get the Jira issue key from the pull request title
-        echo "::set-output name=issue-key::$(echo ${{ github.event.pull_request.title }} | sed 's/^\\[\\(\\w\\+-\\d+\\)\\].*/\\1/')"
+          
 
-    - name: Update Jira issue with link
-      uses: atlassian/gajira-update-issue@v1
-      with:
-        server-url: ${{ secrets.JIRA_SERVER_URL }}
-        username: ${{ secrets.JIRA_USERNAME }}
-        api-token: ${{ secrets.JIRA_API_TOKEN }}
-        issue-key: ${{ steps.get-issue-key.outputs.issue-key }}
-        comment: |
+        - name: Update Jira issue with link
+          uses: atlassian/gajira-update-issue@v1
+          with:
+          server-url: ${{ secrets.JIRA_SERVER_URL }}
+          username: ${{ secrets.JIRA_USERNAME }}
+          api-token: ${{ secrets.JIRA_API_TOKEN }}
+          issue-key: ${{ steps.get-issue-key.outputs.issue-key }}
+          comment: |
           This pull request includes a BrowserStack test run:
-
-          [BrowserStack test observability link](${BROWSERSTACK_OBSERVABILITY_LINK})
+          [BrowserStack test observability link] (${BROWSERSTACK_OBSERVABILITY_LINK})
 
                
                
