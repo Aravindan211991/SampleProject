@@ -62,7 +62,7 @@ jobs:
         - name: Login
           uses: atlassian/gajira-login@v3
           env:
-             JIRA_BASE_URL: ${{ github.base_url }}
+             JIRA_BASE_URL: https://onbe-sandbox-213.atlassian.net/jira/software/c/projects/AA/boards/61
              JIRA_USER_EMAIL: sulagna.chakraborty@onbe.com
              JIRA_API_TOKEN: ATATT3xFfGF0y2VCG1b9nyrFEd8FLfpMg4IWCYAabRns_47J2ovVXfi5BEN4g8XjO9U848Ffe6thdAJP-ijvyMtRFFueI0C1FUXNvKyYPUD2TEwDW16LFc8-eJ83rDfaysl4L5kGgATzSmfALVsHVnFMV0FdR9gwEJC4K6PT2PQLZJXSR_dORWs=4F5BE391
        
