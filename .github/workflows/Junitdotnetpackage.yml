@@ -62,4 +62,6 @@ jobs:
           uses: atlassian/gajira-comment@v3
           with:
           issue: AA-712
-          comment: ${{ github.event.pusher.name }} pushed to repository: ${{ github.event.repository.full_name }}
+          comment: This pull request includes a BrowserStack test run:
+                       [BrowserStack test observability link]("https://observability.browserstack.com/builds/cxkqm4urlekj4fcat8eugyhlzedzspagc6s4qgtp")
+
