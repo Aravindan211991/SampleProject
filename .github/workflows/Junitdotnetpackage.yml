@@ -62,9 +62,9 @@ jobs:
         - name: Login
           uses: atlassian/gajira-login@v3
           env:
-              JIRA_BASE_URL: https://onbe-sandbox-213.atlassian.net/
-              JIRA_USER_EMAIL: sulagna.chakraborty@onbe.com
-              JIRA_API_TOKEN: ATATT3xFfGF0-tTj1S5ss_rTTTlR8RG5FNpfbCbClvOHnfOuGGm5XxbypQWlMvQ_bmyX8qlcbmhg3nJ4_xb2rDY-vhIpnNFQJrm4-hJyzZYT0Nzu41l5RugrWc1vbni5wDKtQQA6t6qCIJ1Ak-7pDNGZhjaKZvhurD4lrOvns2jtRbkjT__WQWA=E2D27C7C
+             JIRA_BASE_URL: https://onbe-sandbox-213.atlassian.net/
+             JIRA_USER_EMAIL: aravindan.kaivalliam@onbe.com
+             JIRA_API_TOKEN: ATATT3xFfGF0THcB6yGia_jR_wTP09jm3d13LuEmdeuqyugegcz
         - name: Comment on issue
           uses: atlassian/gajira-comment@v3
           with:
