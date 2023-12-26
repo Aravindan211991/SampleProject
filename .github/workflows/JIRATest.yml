@@ -58,7 +58,7 @@ jobs:
                final_browserstack_test_observability_link=$(echo "$my_var" | tr -d '"')
                echo "Browserstack test observability link is : " $final_browserstack_test_observability_link
 
-        - name: Update Jira IssueE
+        - name: Update Jira Issue
           run: |
                   JIRA_API_URL="https://onbe-sandbox-213.atlassian.net/browse/AA-712"
                   JIRA_API_USERNAME="sulagna.chakraborty@onbe.com"
