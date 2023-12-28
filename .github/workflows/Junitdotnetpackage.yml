@@ -66,6 +66,7 @@ jobs:
              JIRA_BASE_URL: https://onbe-sandbox-213.atlassian.net/browse/APEX-1389
              JIRA_USER_EMAIL: sulagna.chakraborty@onbe.com
              JIRA_API_TOKEN: ATATT3xFfGF0SnMagnE9F8EJQxRfB-iWsnFchymjHKd1kITV2DL0UdA7N8Hodzi0BSUqVlzzPIsSbFXJj6vxBPX1I7hfdUgJ6HzTFtSBs7L1fUy_omwaazB2YCCc46GIB4bwZ-mALojpwKsG1JaBZfF3lm2fcOsda3BuWBZQl5M1jKopOGC377Y=CE217F1C
+        
         - name: Jira Add Comment
           uses: atlassian/gajira-comment@v3
           with:
