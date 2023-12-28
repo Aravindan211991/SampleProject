@@ -66,11 +66,15 @@ jobs:
              JIRA_USER_EMAIL: sulagna.chakraborty@onbe.com
              JIRA_API_TOKEN: ATATT3xFfGF0y2VCG1b9nyrFEd8FLfpMg4IWCYAabRns_47J2ovVXfi5BEN4g8XjO9U848Ffe6thdAJP-ijvyMtRFFueI0C1FUXNvKyYPUD2TEwDW16LFc8-eJ83rDfaysl4L5kGgATzSmfALVsHVnFMV0FdR9gwEJC4K6PT2PQLZJXSR_dORWs=4F5BE391
        
-        - name: Comment on issue
-          uses: atlassian/gajira-comment@v3
+        - name: Create
+          id: create
+          uses: atlassian/gajira-create@v3
           with:
-               issue: AA-712
-               comment: |
-                       This pull request includes a BrowserStack test run:
-                       [BrowserStack test observability link]("https://observability.browserstack.com/builds/cxkqm4urlekj4fcat8eugyhlzedzspagc6s4qgtp")
+              project: GA
+              issuetype: Build
+              summary: Build completed for ${{ github.repository }}
+              description: Compare branch
+              fields: '{"customfield_10171": "test"}'
 
+        - name: Log created issue
+          run: echo "Issue ${{ steps.create.outputs.issue }} was created"
