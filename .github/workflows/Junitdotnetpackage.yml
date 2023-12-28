@@ -33,7 +33,6 @@ jobs:
           run: |
                git config --global user.email "aravindan.kaivalliam@onbe.com"
                git config --global user.name "Aravindan211991"
-               git pull
                git commit -a -m "Adding Latest Junit Report file"
                git push   
         - name: Upload Junit results in BrowserStack and print the logs in a file
