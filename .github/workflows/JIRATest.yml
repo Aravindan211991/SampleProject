@@ -69,6 +69,6 @@ jobs:
                   -H "Content-Type: application/json" \
                   -u "${JIRA_API_USERNAME}:${JIRA_API_TOKEN}" \
                   -d '{"body": "GitHub Actions workflow has been triggered."}' \
-                  "/rest/api/2/issue/AA-712/comment"   
+                  "${JIRA_API_URL}"   
 
    
