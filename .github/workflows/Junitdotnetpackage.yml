@@ -71,7 +71,7 @@ jobs:
           id: create
           uses: atlassian/gajira-create@v3
           with:
-              project: GA
+              project: APEX
               issuetype: Build
               summary: Build completed for ${{ github.repository }}
               description: Compare branch
