@@ -48,6 +48,7 @@ jobs:
           run: |
                git config --global user.email "aravindan.kaivalliam@onbe.com"
                git config --global user.name "Aravindan211991"
+               git pull
                git add .
                git commit -a -m "Adding file.txt"
                git push 
