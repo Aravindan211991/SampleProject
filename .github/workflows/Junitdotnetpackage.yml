@@ -63,13 +63,13 @@ jobs:
         - name: Login
           uses: atlassian/gajira-login@v3
           env:
-             JIRA_BASE_URL: https://onbe-sandbox-213.atlassian.net/browse/APEX-1389
+             JIRA_BASE_URL: https://onbeco.atlassian.net/browse/INV-1941
              JIRA_USER_EMAIL: sulagna.chakraborty@onbe.com
-             JIRA_API_TOKEN: ATATT3xFfGF0SnMagnE9F8EJQxRfB-iWsnFchymjHKd1kITV2DL0UdA7N8Hodzi0BSUqVlzzPIsSbFXJj6vxBPX1I7hfdUgJ6HzTFtSBs7L1fUy_omwaazB2YCCc46GIB4bwZ-mALojpwKsG1JaBZfF3lm2fcOsda3BuWBZQl5M1jKopOGC377Y=CE217F1C
+             JIRA_API_TOKEN: ATATT3xFfGF091p_2YM7M0_5H3FH9JMC6Vz9Yu9sJJiDR0KJU39prni9DGUAUF-XRQ7sRAkE6nTAkqZVfMPwARr0ihladLlEmfjQkYmSkb2uiib_B7AHGholDlGkAkBdc-P1eYpXoAflxGu4aUZVRBnS-rd_6h7mTVKibc8TsBEU2NVhhHoOBX4=256A600E
         
         - name: Jira Add Comment
           uses: atlassian/gajira-comment@v3
           with:
-            issue: APEX-1389
-            comment: HELLO
+            issue: INV-1941
+            comment: Tested in QA.
           
