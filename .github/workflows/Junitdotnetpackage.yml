@@ -59,6 +59,7 @@ jobs:
                final_browserstack_test_observability_link=$(echo "$my_var" | tr -d '"')
                echo "Browserstack test observability link is : " $final_browserstack_test_observability_link
 
+
         - name: Login
           uses: atlassian/gajira-login@v3
           env:
