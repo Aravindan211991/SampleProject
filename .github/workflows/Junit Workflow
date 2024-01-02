@@ -1,4 +1,5 @@
-name: dotnet package
+
+name: Junit dotnet package
 
 on: [push]
 
@@ -27,19 +28,17 @@ jobs:
             path: "test-result.xml"
           # Use always() to always run this step to publish test results when there are test failures
             #if: ${{ always() }}
-        - name: Parse_Results
-          env:
-                NewTestCycle: 55152
-                qTestProject: 9655
-                qTestPULSEURL: https://pulse-13.qtestnet.com/webhook/9c276f29-0b44-43bd-9363-b4bc436f57c5
+        - name: git action adding test report
           run: |
-                for file in $( find -type f -name "*.xml")
-                do
-                  echo -e "Working on file -----------------------------------> $file"
-                  Parser_Response=$(curl --request POST $qTestPULSEURL -d "projectId=$qTestProject" -d "testcycle=$NewTestCycle" -d "result=$(echo $(cat $file) | basenc --base64url | tr -d \\n)" )             
-                done
-
-                
-           
-           
-            
+               git config --global user.email "sulagna.chakraborty@onbe.com"
+               git config --global user.name "Sulagna Chakraborty"
+               git commit -a -m "Adding Latest Junit Report file"
+               git push   
+        - name: Upload Junit results in BrowserStack
+          run: |
+                curl -u "sulagnachakrabor_hF8bLJ:1bt4ji6nzS6ALopzMHZq" -vvv \
+                -X POST https://upload-observability.browserstack.com/upload \
+                -F "data=test-result.xml" \
+                -F "projectName=Junit report uploads" \
+                -F "buildName=Observability Sample Testing Upload" \
+    
