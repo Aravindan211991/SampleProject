@@ -71,5 +71,5 @@ jobs:
           uses: atlassian/gajira-comment@v3
           with:
             issue: AA-712
-            comment: Tested in QA
+            comment: Tested in QA.
           
