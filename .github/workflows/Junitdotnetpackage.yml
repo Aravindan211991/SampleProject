@@ -63,13 +63,13 @@ jobs:
         - name: Login
           uses: atlassian/gajira-login@v3
           env:
-             JIRA_BASE_URL: https://onbeco.atlassian.net/browse/INV-1941
-             JIRA_USER_EMAIL: sulagna.chakraborty@onbe.com
-             JIRA_API_TOKEN: ATATT3xFfGF091p_2YM7M0_5H3FH9JMC6Vz9Yu9sJJiDR0KJU39prni9DGUAUF-XRQ7sRAkE6nTAkqZVfMPwARr0ihladLlEmfjQkYmSkb2uiib_B7AHGholDlGkAkBdc-P1eYpXoAflxGu4aUZVRBnS-rd_6h7mTVKibc8TsBEU2NVhhHoOBX4=256A600E
+             JIRA_BASE_URL: https://onbe-sandbox-213.atlassian.net/browse/AA-712
+             JIRA_USER_EMAIL: aravindan.kaivalliam@onbe.com
+             JIRA_API_TOKEN: ${{ secrets.JIRAAPITOKEN }}
         
         - name: Jira Add Comment
           uses: atlassian/gajira-comment@v3
           with:
-            issue: INV-1941
+            issue: AA-712
             comment: Tested in QA.
           
