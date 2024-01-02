@@ -35,7 +35,7 @@ jobs:
                git config --global user.name "Aravindan211991"
                git commit -a -m "Adding Latest Junit Report file"
                git pull
-               git force push   
+               git push  
         - name: Upload Junit results in BrowserStack and print the logs in a file
           run: |
                 curl -u "aravindankaivall_PNYOyz:2BLy51auFkVfaKgDv6jk" -vvv \
@@ -51,7 +51,7 @@ jobs:
                git config --global user.name "Aravindan211991"
                git add .
                git commit -a -m "Adding file.txt"
-               git force push 
+               git push
 
         - name: Storing browserstack test observability link in a variable
           run: |
