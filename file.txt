@@ -1,1 +1,1 @@
-{"status":"success","message":"Request to import Junit reports received. You can access the build on this URL in a few seconds https://observability.browserstack.com/builds/erkgstnk1sp3sccyvxhrlozeoo41f1gwsqyf7ifd"}
+{"status":"success","message":"Request to import Junit reports received. You can access the build on this URL in a few seconds https://observability.browserstack.com/builds/jgrp5tdjsduk3gjocyvuevbuofrpc2ltnvkpokle"}
