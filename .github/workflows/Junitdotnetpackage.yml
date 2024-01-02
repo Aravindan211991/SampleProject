@@ -35,7 +35,7 @@ jobs:
                git config --global user.name "Aravindan211991"
                git commit -a -m "Adding Latest Junit Report file"
                git pull
-               git push   
+               git force push   
         - name: Upload Junit results in BrowserStack and print the logs in a file
           run: |
                 curl -u "aravindankaivall_PNYOyz:2BLy51auFkVfaKgDv6jk" -vvv \
