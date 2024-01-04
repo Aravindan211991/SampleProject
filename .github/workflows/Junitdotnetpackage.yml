@@ -75,6 +75,6 @@ jobs:
           uses: atlassian/gajira-comment@v3
           with:
            issue: AA-712
-           comment: ${{ github.event.pusher.name }} $final_browserstack_test_observability_link
+           comment: ${{ github.event.pusher.name }} ${{env.final_browserstack_test_observability_link}}
 
           
