@@ -59,7 +59,8 @@ jobs:
           run: |
                my_var=$(grep -oP '(?<=seconds).*?(?=})' file.txt)
                final_browserstack_test_observability_link=$(echo "$my_var" | tr -d '"')
-               echo "Browserstack test observability link is : " ${final_browserstack_test_observability_link} >>$GITHUB_ENV
+               echo "{BwserStackUrl}=${{final_browserstack_test_observability_link}}" >> "$GITHUB_ENV"
+
                
 
         - name: Login
@@ -74,5 +75,6 @@ jobs:
           uses: atlassian/gajira-comment@v3
           with:
            issue: AA-712
-           comment: ${{ github.event.pusher.name }} $final_browserstack_test_observability_link
+           comment: ${{ github.event.pusher.name }} "$BwserStackUrl"
+
           
