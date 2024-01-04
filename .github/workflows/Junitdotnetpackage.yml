@@ -65,6 +65,7 @@ jobs:
              JIRA_BASE_URL: https://onbe-sandbox-213.atlassian.net
              JIRA_USER_EMAIL: aravindan.kaivalliam@onbe.com
              JIRA_API_TOKEN: ${{ secrets.JIRAAPITOKEN }}
+
           
         - name: Jira Add Comment
           uses: atlassian/gajira-comment@v3
