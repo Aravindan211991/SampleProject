@@ -536,6 +536,15 @@
           }
         }
       },
+      "NUnit3TestAdapter/4.5.0": {
+        "type": "package",
+        "build": {
+          "build/netcoreapp3.1/NUnit3TestAdapter.props": {}
+        }
+      },
+      "ReportUnit/1.2.1": {
+        "type": "package"
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
         "type": "package",
         "runtimeTargets": {
@@ -739,6 +748,26 @@
         },
         "runtime": {
           "lib/netstandard2.0/SpecFlow.Internal.Json.dll": {}
+        }
+      },
+      "SpecFlow.Plus.LivingDocPlugin/3.9.57": {
+        "type": "package",
+        "dependencies": {
+          "SpecFlow": "[3.9.8, 3.10.0)",
+          "SpecFlow.Internal.Json": "1.0.8",
+          "SpecFlow.Tools.MsBuild.Generation": "[3.9.8, 3.10.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/LivingDoc.Dtos.dll": {},
+          "lib/netstandard2.0/LivingDoc.SpecFlowPlugin.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/LivingDoc.Dtos.dll": {},
+          "lib/netstandard2.0/LivingDoc.SpecFlowPlugin.dll": {}
+        },
+        "build": {
+          "build/SpecFlow.Plus.LivingDocPlugin.props": {},
+          "build/SpecFlow.Plus.LivingDocPlugin.targets": {}
         }
       },
       "SpecFlow.Tools.MsBuild.Generation/3.9.74": {
@@ -3006,6 +3035,46 @@
         "nuget.frameworks.nuspec"
       ]
     },
+    "NUnit3TestAdapter/4.5.0": {
+      "sha512": "s8JpqTe9bI2f49Pfr3dFRfoVSuFQyraTj68c3XXjIS/MRGvvkLnrg6RLqnTjdShX+AdFUCCU/4Xex58AdUfs6A==",
+      "type": "package",
+      "path": "nunit3testadapter/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net462/NUnit3.TestAdapter.dll",
+        "build/net462/NUnit3.TestAdapter.pdb",
+        "build/net462/NUnit3TestAdapter.props",
+        "build/net462/nunit.engine.api.dll",
+        "build/net462/nunit.engine.core.dll",
+        "build/net462/nunit.engine.dll",
+        "build/net462/testcentric.engine.metadata.dll",
+        "build/netcoreapp3.1/NUnit3.TestAdapter.dll",
+        "build/netcoreapp3.1/NUnit3.TestAdapter.pdb",
+        "build/netcoreapp3.1/NUnit3TestAdapter.props",
+        "build/netcoreapp3.1/nunit.engine.api.dll",
+        "build/netcoreapp3.1/nunit.engine.core.dll",
+        "build/netcoreapp3.1/nunit.engine.dll",
+        "build/netcoreapp3.1/testcentric.engine.metadata.dll",
+        "docs/README.md",
+        "nunit3testadapter.4.5.0.nupkg.sha512",
+        "nunit3testadapter.nuspec",
+        "nunit_256.png"
+      ]
+    },
+    "ReportUnit/1.2.1": {
+      "sha512": "68aP9jbHZfxJU2s0tEG/SnKcKBabq/EiP+CwwaqfqvfxqjC/cE8FzB7nAOTFjaCnFD0wu94g6LraFCkM3cW8nw==",
+      "type": "package",
+      "path": "reportunit/1.2.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "reportunit.1.2.1.nupkg.sha512",
+        "reportunit.nuspec",
+        "tools/ReportUnit.exe"
+      ]
+    },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
       "sha512": "7VSGO0URRKoMEAq0Sc9cRz8mb6zbyx/BZDEWhgPdzzpmFhkam3fJ1DAGWFXBI4nGlma+uPKpfuMQP5LXRnOH5g==",
       "type": "package",
@@ -3091,12 +3160,11 @@
       ]
     },
     "runtime.native.System.Security.Cryptography.Apple/4.3.0": {
-      "sha512": "DloMk88juo0OuOWr56QG7MNchmafTLYWvABy36izkrLI5VledI0rq28KGs1i9wbpeT9NPQrx/wTf8U2vazqQ3Q==",
+      "sha512": "jwjwlEL0Elv6gwoyaokRn12nv/JE+UW/DXJEbzhjCPvGbef36StnHKc9XaZD/rGWqYicrphZ7eumR/jdmNcjRg==",
       "type": "package",
       "path": "runtime.native.system.security.cryptography.apple/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -3147,7 +3215,7 @@
       ]
     },
     "runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.Apple/4.3.0": {
-      "sha512": "kVXCuMTrTlxq4XOOMAysuNwsXWpYeboGddNGpIgNSZmv1b6r/s/DPk0fYMB7Q5Qo4bY68o48jt4T4y5BVecbCQ==",
+      "sha512": "Kh9W4agE0r/hK8AX1LvyQI2NrKHBL8pO0gRoDTdDb0LL6Ta1Z2OtFx3lOaAE0ZpCUc/dt9Wzs3rA7a3IsKdOVA==",
       "type": "package",
       "path": "runtime.osx.10.10-x64.runtime.native.system.security.cryptography.apple/4.3.0",
       "files": [
@@ -3268,6 +3336,24 @@
         "lib/netstandard2.0/SpecFlow.Internal.Json.dll",
         "specflow.internal.json.1.0.8.nupkg.sha512",
         "specflow.internal.json.nuspec"
+      ]
+    },
+    "SpecFlow.Plus.LivingDocPlugin/3.9.57": {
+      "sha512": "hH/jTxLVWS/QlCGvNMk4BSI/mcJhlnEjx4xWjP4dLUWek/CmSST49NAzQVvZpoqwrkIErMAzWRV/PFFvyLiShA==",
+      "type": "package",
+      "path": "specflow.plus.livingdocplugin/3.9.57",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/SpecFlow.Plus.LivingDocPlugin.props",
+        "build/SpecFlow.Plus.LivingDocPlugin.targets",
+        "images/specflow-icon.png",
+        "lib/net461/LivingDoc.Dtos.dll",
+        "lib/net461/LivingDoc.SpecFlowPlugin.dll",
+        "lib/netstandard2.0/LivingDoc.Dtos.dll",
+        "lib/netstandard2.0/LivingDoc.SpecFlowPlugin.dll",
+        "specflow.plus.livingdocplugin.3.9.57.nupkg.sha512",
+        "specflow.plus.livingdocplugin.nuspec"
       ]
     },
     "SpecFlow.Tools.MsBuild.Generation/3.9.74": {
@@ -6990,6 +7076,9 @@
       "FluentAssertions >= 6.12.0",
       "JunitXml.TestLogger >= 3.0.134",
       "Microsoft.NET.Test.Sdk >= 17.3.2",
+      "NUnit3TestAdapter >= 4.5.0",
+      "ReportUnit >= 1.2.1",
+      "SpecFlow.Plus.LivingDocPlugin >= 3.9.57",
       "SpecFlow.xUnit >= 3.9.74",
       "coverlet.collector >= 3.1.2",
       "xunit >= 2.4.2",
@@ -6997,25 +7086,32 @@
     ]
   },
   "packageFolders": {
-    "/home/runner/.nuget/packages/": {}
+    "C:\\Users\\akaivalliam\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/runner/work/SampleProject/SampleProject/SampleProject.csproj",
+      "projectUniqueName": "C:\\Users\\akaivalliam\\source\\repos\\SampleProject\\SampleProject.csproj",
       "projectName": "SampleProject",
-      "projectPath": "/home/runner/work/SampleProject/SampleProject/SampleProject.csproj",
-      "packagesPath": "/home/runner/.nuget/packages/",
-      "outputPath": "/home/runner/work/SampleProject/SampleProject/obj/",
+      "projectPath": "C:\\Users\\akaivalliam\\source\\repos\\SampleProject\\SampleProject.csproj",
+      "packagesPath": "C:\\Users\\akaivalliam\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\akaivalliam\\source\\repos\\SampleProject\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/home/runner/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\akaivalliam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.pkg.github.com/Onbe/index.json": {}
       },
       "frameworks": {
         "net6.0": {
@@ -7044,6 +7140,18 @@
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[17.3.2, )"
+          },
+          "NUnit3TestAdapter": {
+            "target": "Package",
+            "version": "[4.5.0, )"
+          },
+          "ReportUnit": {
+            "target": "Package",
+            "version": "[1.2.1, )"
+          },
+          "SpecFlow.Plus.LivingDocPlugin": {
+            "target": "Package",
+            "version": "[3.9.57, )"
           },
           "SpecFlow.xUnit": {
             "target": "Package",
@@ -7082,7 +7190,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.100/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

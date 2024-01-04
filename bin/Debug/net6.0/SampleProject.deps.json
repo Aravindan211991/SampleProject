@@ -11,6 +11,9 @@
           "FluentAssertions": "6.12.0",
           "JunitXml.TestLogger": "3.0.134",
           "Microsoft.NET.Test.Sdk": "17.3.2",
+          "NUnit3TestAdapter": "4.5.0",
+          "ReportUnit": "1.2.1",
+          "SpecFlow.Plus.LivingDocPlugin": "3.9.57",
           "SpecFlow.xUnit": "3.9.74",
           "coverlet.collector": "3.1.2",
           "xunit": "2.4.2",
@@ -460,6 +463,8 @@
           }
         }
       },
+      "NUnit3TestAdapter/4.5.0": {},
+      "ReportUnit/1.2.1": {},
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {},
       "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {},
       "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {},
@@ -530,6 +535,23 @@
           "lib/netstandard2.0/SpecFlow.Internal.Json.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.8.28882"
+          }
+        }
+      },
+      "SpecFlow.Plus.LivingDocPlugin/3.9.57": {
+        "dependencies": {
+          "SpecFlow": "3.9.74",
+          "SpecFlow.Internal.Json": "1.0.8",
+          "SpecFlow.Tools.MsBuild.Generation": "3.9.74"
+        },
+        "runtime": {
+          "lib/netstandard2.0/LivingDoc.Dtos.dll": {
+            "assemblyVersion": "3.9.0.0",
+            "fileVersion": "3.9.57.23759"
+          },
+          "lib/netstandard2.0/LivingDoc.SpecFlowPlugin.dll": {
+            "assemblyVersion": "3.9.0.0",
+            "fileVersion": "3.9.57.23759"
           }
         }
       },
@@ -1408,6 +1430,20 @@
       "path": "nuget.frameworks/5.11.0",
       "hashPath": "nuget.frameworks.5.11.0.nupkg.sha512"
     },
+    "NUnit3TestAdapter/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-s8JpqTe9bI2f49Pfr3dFRfoVSuFQyraTj68c3XXjIS/MRGvvkLnrg6RLqnTjdShX+AdFUCCU/4Xex58AdUfs6A==",
+      "path": "nunit3testadapter/4.5.0",
+      "hashPath": "nunit3testadapter.4.5.0.nupkg.sha512"
+    },
+    "ReportUnit/1.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-68aP9jbHZfxJU2s0tEG/SnKcKBabq/EiP+CwwaqfqvfxqjC/cE8FzB7nAOTFjaCnFD0wu94g6LraFCkM3cW8nw==",
+      "path": "reportunit/1.2.1",
+      "hashPath": "reportunit.1.2.1.nupkg.sha512"
+    },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
       "type": "package",
       "serviceable": true,
@@ -1533,6 +1569,13 @@
       "sha512": "sha512-lVCC/Rie7N5rFoc7YxPS0nneLfsWSTIMMlkndwxhaD8MxBp3Bsv1HeiVjVwXCjWaQeoqZcvIy52fF5Xit00ZLw==",
       "path": "specflow.internal.json/1.0.8",
       "hashPath": "specflow.internal.json.1.0.8.nupkg.sha512"
+    },
+    "SpecFlow.Plus.LivingDocPlugin/3.9.57": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hH/jTxLVWS/QlCGvNMk4BSI/mcJhlnEjx4xWjP4dLUWek/CmSST49NAzQVvZpoqwrkIErMAzWRV/PFFvyLiShA==",
+      "path": "specflow.plus.livingdocplugin/3.9.57",
+      "hashPath": "specflow.plus.livingdocplugin.3.9.57.nupkg.sha512"
     },
     "SpecFlow.Tools.MsBuild.Generation/3.9.74": {
       "type": "package",
