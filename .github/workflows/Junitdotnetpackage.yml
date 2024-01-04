@@ -59,8 +59,8 @@ jobs:
           run: |
                my_var=$(grep -oP '(?<=seconds).*?(?=})' file.txt)
                final_browserstack_test_observability_link=$(echo "$my_var" | tr -d '"')
-               echo "BwserStackUrl=${{final_browserstack_test_observability_link}}" >> "$GITHUB_ENV"
-               
+               echo "BwserStackUrl=$(echo "$my_var" | tr -d '"')" >> "$GITHUB_ENV"
+
 
         - name: Login
           uses: atlassian/gajira-login@v3
