@@ -70,6 +70,6 @@ jobs:
         - name: Jira Add Comment
           uses: atlassian/gajira-comment@v3
           with:
-            issue: AA-712
-            comment: Tested in QA
+           issue: AA-712
+           comment: ${{ github.event.pusher.name }}
           
