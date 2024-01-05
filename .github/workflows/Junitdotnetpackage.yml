@@ -61,6 +61,22 @@ jobs:
                echo "final_browserstack_test_observability_link=$(echo "$my_var" | tr -d '"')" >> $GITHUB_ENV
         - name: Check Url
           run: echo $final_browserstack_test_observability_link
+
+        - name: Get Jira issue key
+          id: get-issue-key
+           run:|
+                echo "::set-output name=issue-key::$(echo ${{ github.event.push_request.title }} | sed 's/^\\[\\(\\w\\+-\\d+\\)\\].*/\\1/')"
+
+        - name: Update Jira issue with link
+          uses: atlassian/gajira-update-issue@v1
+          with:
+            server-url: https://onbe-sandbox-213.atlassian.net
+            username: aravindan.kaivalliam@onbe.com
+            api-token: ${{ secrets.JIRAAPITOKEN }}
+            issue-key: ${{ steps.get-issue-key.outputs.issue-key }}
+            comment: |
+                This push request includes a BrowserStack test run:
+                      [BrowserStack test observability link](${BROWSERSTACK_OBSERVABILITY_LINK})
       
         - name: Login
           uses: atlassian/gajira-login@v3
