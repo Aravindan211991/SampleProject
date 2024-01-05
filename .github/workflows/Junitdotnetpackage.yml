@@ -64,8 +64,8 @@ jobs:
 
         - name: Get Jira issue key
           id: get-issue-key
-           run:|
-                echo "::set-output name=issue-key::$(echo ${{ github.event.push_request.title }} | sed 's/^\\[\\(\\w\\+-\\d+\\)\\].*/\\1/')"
+          run: |
+                echo "::set-output name=issue-key::$(echo ${{ github.event.pull_request.title }} | sed 's/^\\[\\(\\w\\+-\\d+\\)\\].*/\\1/')"
 
         - name: Update Jira issue with link
           uses: atlassian/gajira-update-issue@v1
@@ -75,7 +75,7 @@ jobs:
             api-token: ${{ secrets.JIRAAPITOKEN }}
             issue-key: ${{ steps.get-issue-key.outputs.issue-key }}
             comment: |
-                This push request includes a BrowserStack test run:
+                This pull request includes a BrowserStack test run:
                       [BrowserStack test observability link](${BROWSERSTACK_OBSERVABILITY_LINK})
       
         - name: Login
