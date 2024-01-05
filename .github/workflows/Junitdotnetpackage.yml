@@ -64,9 +64,8 @@ jobs:
 
         - name: Get Jira issue key
           id: get-issue-key
-          run: |
-                echo "::set-output name=issue-key::$(echo ${{ github.event.pull_request.title }} | sed 's/^\\[\\(\\w\\+-\\d+\\)\\].*/\\1/')"
-
+          run: | 
+                 echo "issue-key=$(echo ${{ github.event.pull_request.title }} | sed 's/^\\[\\(\\w\\+-\\d+\\)\\].*/\\1/')" >> $GITHUB_OUTPUT
         - name: Login
           uses: atlassian/gajira-login@v3
           env:
