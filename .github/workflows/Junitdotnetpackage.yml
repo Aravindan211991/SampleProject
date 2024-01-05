@@ -59,6 +59,7 @@ jobs:
           run: |
                my_var=$(grep -oP '(?<=seconds).*?(?=})' file.txt)
                echo "final_browserstack_test_observability_link=$(echo "$my_var" | tr -d '"')" >> $GITHUB_ENV
+        
         - name: Check Url
           run: echo $final_browserstack_test_observability_link
 
@@ -66,6 +67,10 @@ jobs:
           id: get-issue-key
           run: | 
                  echo "issue-key=$(echo ${{ github.event.pull_request.title }} | sed 's/^\\[\\(\\w\\+-\\d+\\)\\].*/\\1/')" >> $GITHUB_OUTPUT
+
+        - name: Check issue key value
+          run: echo $issue-key
+        
         - name: Login
           uses: atlassian/gajira-login@v3
           env:
