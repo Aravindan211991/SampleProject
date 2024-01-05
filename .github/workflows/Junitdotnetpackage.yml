@@ -1,7 +1,10 @@
 
 name: Junit dotnet package
 
-on: [push]
+on:
+  pull_request:
+    types:
+      - opened
 
 jobs:
   build:
