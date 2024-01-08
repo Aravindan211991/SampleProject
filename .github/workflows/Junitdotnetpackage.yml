@@ -40,7 +40,7 @@ jobs:
                git add .
                git commit -m "Adding Latest Junit Report file"
                git config --global pull.ff only 
-               git pull origin master --rebase
+               git push --force
 
                
         - name: Upload Junit results in BrowserStack and print the logs in a file
