@@ -59,7 +59,7 @@ jobs:
                git add .
                git commit -m "Adding file.txt"
                git config --global pull.ff only 
-               git push origin HEAD:master --force
+               git push origin HEAD:master --forc
 
         - name: Storing browserstack test observability link in a variable
           run: |
