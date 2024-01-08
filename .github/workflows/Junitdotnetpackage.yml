@@ -39,8 +39,8 @@ jobs:
                git config --global user.name "Aravindan211991"
                git add .
                git commit -m "Adding Latest Junit Report file"
-               git config pull.ff only 
-               git push origin HEAD:TestBranch-for-PR
+               git config --global pull.ff only 
+               git push 
 
                
         - name: Upload Junit results in BrowserStack and print the logs in a file
