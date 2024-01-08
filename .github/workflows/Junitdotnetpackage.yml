@@ -5,6 +5,7 @@ on:
   pull_request:
     types:
       - opened
+      - synchronize
 
 jobs:
   build:
@@ -72,7 +73,7 @@ jobs:
                  echo "issue-key=$(echo ${{ github.event.pull_request.title }} | sed 's/^\\[\\(\\w\\+-\\d+\\)\\].*/\\1/')" >> $GITHUB_OUTPUT
 
         - name: Check issue key value
-          run: echo $issue-key
+          run: echo ${{env.issue-key}}
         
         - name: Login
           uses: atlassian/gajira-login@v3
