@@ -35,6 +35,8 @@ jobs:
             
         - name: git action adding test report
           run: |
+               git config --global user.email "aravindan.kaivalliam@onbe.com"
+               git config --global user.name "Aravindan211991"
                git add test-result.xml
                git commit -a -m "Adding Latest Junit Report file"
                git push origin main
