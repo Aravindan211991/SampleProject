@@ -83,7 +83,7 @@ jobs:
              JIRA_API_TOKEN: ${{ secrets.JIRAAPITOKEN }}
 
           
-        - name: Jira Add Comment
+        - name: Jira Add CommentT
           uses: atlassian/gajira-comment@v3
           with:
            issue: ${{ steps.get-issue-key.outputs.issue-key }}
