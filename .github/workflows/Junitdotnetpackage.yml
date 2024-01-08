@@ -5,6 +5,7 @@ on:
   pull_request:
     types:
       - opened
+      - synchronize
 
 jobs:
   build:
@@ -72,7 +73,7 @@ jobs:
                  echo "issue-key=$(echo ${{ github.event.pull_request.title }} | sed 's/^\\[\\(\\w\\+-\\d+\\)\\].*/\\1/')" >> $GITHUB_OUTPUT
 
         - name: Check issue key value
-          run: echo $issue-key
+          run: echo ${{env.issue-key}}
         
         - name: Login
           uses: atlassian/gajira-login@v3
@@ -82,7 +83,7 @@ jobs:
              JIRA_API_TOKEN: ${{ secrets.JIRAAPITOKEN }}
 
           
-        - name: Jira Add Comment
+        - name: Jira Add CommentT
           uses: atlassian/gajira-comment@v3
           with:
            issue: ${{ steps.get-issue-key.outputs.issue-key }}
