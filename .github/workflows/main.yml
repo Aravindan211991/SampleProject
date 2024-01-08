@@ -1,6 +1,6 @@
 name: dotnet package
 
-on: 
+on:
 
 jobs:
   build:
