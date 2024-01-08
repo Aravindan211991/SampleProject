@@ -4,4 +4,4 @@ Note for executing the framework:
 Run the command - dotnet test "SampleProject.csproj" --no-build --verbosity normal --logger:"junit;LogFilePath=test-result.xml in cmd to execute the specflow tests in the project, which will return us the test report in xml format. 
 
 
-  
+Test
