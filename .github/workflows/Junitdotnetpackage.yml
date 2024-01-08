@@ -57,8 +57,9 @@ jobs:
                git config --global user.email "aravindan.kaivalliam@onbe.com"
                git config --global user.name "Aravindan211991"
                git add .
-               git commit -a -m "Adding file.txt"
-               git push
+               git commit -m "Adding file.txt"
+               git config --global pull.ff only 
+               git push origin HEAD:master --force
 
         - name: Storing browserstack test observability link in a variable
           run: |
