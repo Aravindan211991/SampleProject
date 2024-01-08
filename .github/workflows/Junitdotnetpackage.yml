@@ -37,11 +37,12 @@ jobs:
           run: |
                git config --global user.email "aravindan.kaivalliam@onbe.com"
                git config --global user.name "Aravindan211991"
-               git remote prune origin
                git add .
-               git commit -a -m "Adding Latest Junit Report file"
-               git remote prune origin
-               git push --force
+               git commit -m "Adding Latest Junit Report file"
+               git config --global pull.ff only 
+               git push origin HEAD:master --force
+
+               
         - name: Upload Junit results in BrowserStack and print the logs in a file
           run: |
                 curl -u "aravindankaivall_PNYOyz:2BLy51auFkVfaKgDv6jk" -vvv \
@@ -56,8 +57,9 @@ jobs:
                git config --global user.email "aravindan.kaivalliam@onbe.com"
                git config --global user.name "Aravindan211991"
                git add .
-               git commit -a -m "Adding file.txt"
-               git push
+               git commit -m "Adding file.txt"
+               git config --global pull.ff only 
+               git push origin HEAD:master --forc
 
         - name: Storing browserstack test observability link in a variable
           run: |
