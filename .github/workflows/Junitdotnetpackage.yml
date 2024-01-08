@@ -39,7 +39,7 @@ jobs:
                git config --global user.name "Aravindan211991"
                git add .
                git commit -a -m "Adding Latest Junit Report file"
-               git push origin HEAD
+               git push origin HEAD:refs/heads/HEAD
                
         - name: Upload Junit results in BrowserStack and print the logs in a file
           run: |
