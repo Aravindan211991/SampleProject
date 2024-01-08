@@ -56,7 +56,7 @@ jobs:
                git config --global user.name "Aravindan211991"
                git add .
                git commit -a -m "Adding file.txt"
-               git push
+               git push origin HEAD:HEAD
 
         - name: Storing browserstack test observability link in a variable
           run: |
