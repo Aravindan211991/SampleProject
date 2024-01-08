@@ -39,6 +39,7 @@ jobs:
                git config --global user.name "Aravindan211991"
                git add .
                git commit -m "Adding Latest Junit Report file"
+               git pull
                git push origin HEAD:TestBranch-for-PR
 
                
