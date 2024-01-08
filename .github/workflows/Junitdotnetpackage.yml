@@ -39,6 +39,7 @@ jobs:
                git config --global user.name "Aravindan211991"
                git add .
                git commit -a -m "Adding Latest Junit Report file"
+               git pull
                git push origin HEAD:refs/heads/HEAD
                
         - name: Upload Junit results in BrowserStack and print the logs in a file
@@ -56,6 +57,7 @@ jobs:
                git config --global user.name "Aravindan211991"
                git add .
                git commit -a -m "Adding file.txt"
+               git pull
                git push origin HEAD:HEAD
 
         - name: Storing browserstack test observability link in a variable
