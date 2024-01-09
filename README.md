@@ -1,4 +1,4 @@
-Hello this is testing.123..test 0901024
+
 
 This is a sample project for qTest POC using github Actions, specflow tests, xunit dotnet framework:
 
