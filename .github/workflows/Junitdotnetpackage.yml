@@ -68,7 +68,7 @@ jobs:
         - name: Get Jira issue key
           id: get-issue-key
           run: | 
-                 echo "issue-key=$(echo ${{ github.event.pull_request.title }}" >> $GITHUB_OUTPUT
+                 echo "issue-key=$(echo ${{ github.event.pull_request.title }})" >> $GITHUB_OUTPUT
 
         - name: Check issue key value
           run: echo ${{ steps.get-issue-key.outputs.issue-key }}
@@ -81,7 +81,7 @@ jobs:
              JIRA_API_TOKEN: ${{ secrets.JIRAAPITOKEN }}
 
           
-        - name: Jira Add CommentT
+        - name: Jira Add Comment
           uses: atlassian/gajira-comment@v3
           with:
            issue: ${{ steps.get-issue-key.outputs.issue-key }}
