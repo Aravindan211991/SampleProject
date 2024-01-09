@@ -1,11 +1,7 @@
 
 name: Junit dotnet package
 
-on:
-  pull_request:
-    types:
-      - opened
-      - synchronize
+on: push
 
 jobs:
   build:
@@ -75,7 +71,7 @@ jobs:
                  echo "issue-key=$(echo ${{ github.event.pull_request.title }}" >> $GITHUB_OUTPUT
 
         - name: Check issue key value
-          run: echo $issue-key
+          run: echo ${{ steps.get-issue-key.outputs.issue-key }}
         
         - name: Login
           uses: atlassian/gajira-login@v3
