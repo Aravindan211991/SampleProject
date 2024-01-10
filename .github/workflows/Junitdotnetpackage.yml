@@ -1,11 +1,7 @@
 
 name: Junit dotnet package
 
-on:
-  pull_request:
-    types:
-      - opened
-      - synchronize
+on: push
 
 
 jobs:
@@ -36,8 +32,8 @@ jobs:
             
         - name: git action adding test report
           run: |
-               git config --global user.email "aravindan.kaivalliam@onbe.com"
-               git config --global user.name "Aravindan211991"
+               git config --global user.email "${{ github.email }}"
+               git config --global user.name "${{ github.user }}"
                git add .
                git commit -m "Adding Latest Junit Report file"
                git config --global pull.ff only 
@@ -46,7 +42,7 @@ jobs:
                
         - name: Upload Junit results in BrowserStack and print the logs in a file
           run: |
-                curl -u "aravindankaivall_PNYOyz:2BLy51auFkVfaKgDv6jk" -vvv \
+                curl -u "${{ secrets.BROWSERSTACKID }}:${{ secrets.BROWSERSTACKPASSWORD }}" -vvv \
                      -X POST \
                      -F 'data=@"test-result.xml"' \
                      -F "projectName=Junit report uploads" \
@@ -55,8 +51,8 @@ jobs:
 
         - name: git action Pushing results file containing browserstack test observability link in github
           run: |
-               git config --global user.email "aravindan.kaivalliam@onbe.com"
-               git config --global user.name "Aravindan211991"
+               git config --global user.email "${{ github.email }}"
+               git config --global user.name "${{ github.user }}"
                git add .
                git commit -m "Adding file.txt"
                git config --global pull.ff only 
@@ -82,7 +78,7 @@ jobs:
           uses: atlassian/gajira-login@v3
           env:
              JIRA_BASE_URL: https://onbe-sandbox-213.atlassian.net
-             JIRA_USER_EMAIL: aravindan.kaivalliam@onbe.com
+             JIRA_USER_EMAIL: ${{ github.email }}
              JIRA_API_TOKEN: ${{ secrets.JIRAAPITOKEN }}
 
           
