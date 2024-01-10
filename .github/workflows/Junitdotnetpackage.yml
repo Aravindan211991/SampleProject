@@ -1,7 +1,10 @@
 
 name: Junit dotnet package
 
-on: push
+on:
+  push:
+    branches:
+      - master
 
 
 jobs:
