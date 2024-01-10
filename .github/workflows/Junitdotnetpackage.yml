@@ -2,11 +2,11 @@
 name: Junit dotnet package
 
 on:
-  push:
-    branches:
-      - TestBranch-for-PR
-
-
+  pull_request:
+    types:
+      - opened
+      - synchronize
+  
 jobs:
   build:
 
