@@ -32,8 +32,8 @@ jobs:
             
         - name: git action adding test report
           run: |
-               git config --global user.email "${GITHUB_ACTOR}"
-               git config --global user.name "${{ github.user }}"
+               git config --global user.email "${{ github.user.email }}"
+               git config --global user.name "${{ github.user.name }}"
                git add .
                git commit -m "Adding Latest Junit Report file"
                git config --global pull.ff only 
