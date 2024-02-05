@@ -9,6 +9,6 @@ jobs:
     executor: ubuntu-executor
     steps:
       - checkout
-    - run:
+      - run:
           name: "Run Application Tests"
           command: dotnet test
