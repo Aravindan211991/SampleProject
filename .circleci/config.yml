@@ -14,12 +14,12 @@ jobs:
     command: |
       git config --global user.email "${{ secrets.GITHUBEMAIL }}"
       git config --global user.name "${{ secrets.GITHUBUSERNAME }}"
+      git add .
+      git commit -m "Adding Latest Junit Report file"
+      git config --global pull.ff only 
+      git push origin HEAD:master --force
 
     steps:  
-      - run:
-          name: Pull Latest Changes
-    command: git pull origin master
-
       - run:
           name: "Install project dependencies"
           command: dotnet.exe restore
