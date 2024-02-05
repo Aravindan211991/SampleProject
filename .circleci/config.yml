@@ -3,22 +3,22 @@ version: 2.1
 orbs:
   windows: circleci/windows@2.2.0
 
-- run:
-    name: Configure Git User Info
-    command: |
-      git config --global user.email "${{ secrets.GITHUBEMAIL }}"
-      git config --global user.name "${{ secrets.GITHUBUSERNAME }}"
-- run:
-    name: Pull Latest Changes
-    command: git pull origin master
-
 jobs:
   test:
     description: Setup and run application tests
     executor:
       name: windows/default
     steps:
-      - checkout
+      - run:
+          name: Configure Git User Info
+    command: |
+      git config --global user.email "${{ secrets.GITHUBEMAIL }}"
+      git config --global user.name "${{ secrets.GITHUBUSERNAME }}"
+
+    steps:  
+      - run:
+          name: Pull Latest Changes
+    command: git pull origin master
       - restore_cache:
           keys:
             - dotnet-packages-v1-{{ checksum "SampleProject.csproj" }}
