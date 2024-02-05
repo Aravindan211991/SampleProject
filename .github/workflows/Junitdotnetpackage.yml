@@ -85,10 +85,10 @@ jobs:
              JIRA_API_TOKEN: ${{ secrets.JIRAAPITOKEN }}
 
           
-        - name: Jira Add Comment
-          uses: atlassian/gajira-comment@v3
-          with:
-           issue: ${{ steps.get-issue-key.outputs.issue-key }}
-           comment: Check Report in the link ${{env.final_browserstack_test_observability_link}}
+        # - name: Jira Add Comment
+        #   uses: atlassian/gajira-comment@v3
+        #   with:
+        #    issue: ${{ steps.get-issue-key.outputs.issue-key }}
+        #    comment: Check Report in the link ${{env.final_browserstack_test_observability_link}}
 
           
