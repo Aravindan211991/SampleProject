@@ -19,9 +19,7 @@ jobs:
       - run:
           name: Pull Latest Changes
     command: git pull origin master
-      - restore_cache:
-          keys:
-            - dotnet-packages-v1-{{ checksum "SampleProject.csproj" }}
+
       - run:
           name: "Install project dependencies"
           command: dotnet.exe restore
