@@ -6,10 +6,8 @@ orbs:
 jobs:
   test:
     description: Setup and run application tests
-    executor:
-      -run:
-      name: windows/default
-    
+    executor: ubuntu-executor
+  
       - run:
           name: Configure Git User Info
     command: |
