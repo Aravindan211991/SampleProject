@@ -10,7 +10,7 @@ jobs:
   
       - run:
       name: Configure Git User Info
-    command: |
+      command: |
       git config --global user.email "${{ secrets.GITHUBEMAIL }}"
       git config --global user.name "${{ secrets.GITHUBUSERNAME }}"
       git add .
@@ -21,14 +21,14 @@ jobs:
     steps:  
       - run:
       name: "Install project dependencies"
-          command: dotnet.exe restore
+      command: dotnet.exe restore
       - save_cache:
           paths:
             - C:\Users\circleci\.nuget\packages
           key: dotnet-packages-v1-{{ checksum "SampleProject.csproj" }}
       - run:
       name: "Run Application Tests"
-          command: dotnet.exe test "SampleProject.csproj" --no-build --verbosity normal --logger:"junit;LogFilePath=test-result.xml"
+      command: dotnet.exe test "SampleProject.csproj" --no-build --verbosity normal --logger:"junit;LogFilePath=test-result.xml"
           
       - store_artifacts:
-          path: C:\Users\circleci\project\test-result.xml
+      path: C:\Users\circleci\project\test-result.xml
