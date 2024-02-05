@@ -11,4 +11,4 @@ jobs:
           command: dotnet restore
       - run:
           name: Run tests
-          command: dotnet test
+          command: dotnet test "SampleProject.csproj" --no-build --verbosity normal --logger:"junit;LogFilePath=test-result.xml"
