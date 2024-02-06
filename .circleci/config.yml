@@ -1,4 +1,6 @@
 version: 2.1
+orbs:
+  jira: circleci/jira@2.1.0
 jobs:
   build:
     docker:
@@ -15,3 +17,6 @@ jobs:
       - store_artifacts:
           path: test-result.xml
           destination: junit
+      - store_test_results:
+          path: test-result.xml
+
