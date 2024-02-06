@@ -14,6 +14,7 @@ jobs:
       - run:
           name: Run tests
           command: dotnet test "SampleProject.csproj" --no-build --verbosity normal --logger:"junit;LogFilePath=test-result.xml"
+          
       - store_artifacts:
           path: test-result.xml
           destination: junit
