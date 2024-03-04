@@ -1,4 +1,4 @@
-name: Junit dotnet package
+name: SpecflowLivingDocHTML
 
 on: [push]
   #pull_request:
