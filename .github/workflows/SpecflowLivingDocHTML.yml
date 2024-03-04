@@ -33,5 +33,7 @@ jobs:
               path: "bin/Debug/net6.0/TestExecution.json"
 
         - name: create html living doc report from json
-          run: livingdoc feature-folder "Features" -t "bin/Debug/net6.0/TestExecution.json"  
+          run: |
+                dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
+                livingdoc feature-folder "Features" -t "bin/Debug/net6.0/TestExecution.json"  
 
