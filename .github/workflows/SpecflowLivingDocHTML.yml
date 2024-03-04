@@ -37,3 +37,10 @@ jobs:
                 dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
                 livingdoc feature-folder "Features" -t "bin/Debug/net6.0/TestExecution.json"  
 
+        - name: Living Doc HTML Reports
+          uses: actions/upload-artifact@v4
+          with:
+              name: LivingDocHTML
+              path: "LivingDoc.html"
+                
+
