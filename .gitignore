@@ -5,7 +5,7 @@
 /.vs/SampleProject/FileContentIndex/6044fa55-fd5b-48fe-9a55-574474408d1e.vsidx
 /.vs/SampleProject/DesignTimeBuild/.dtbcache.v2
 /.vs/SampleProject
-/obj/Debug/net6.0
+#/obj/Debug/net6.0
 /.vs/ProjectEvaluation/sampleproject.metadata.v5.2
 /.vs/SampleProject/v17/TestStore/0/000.testlog
 /bin/Debug/net6.0/SampleProject.dll
