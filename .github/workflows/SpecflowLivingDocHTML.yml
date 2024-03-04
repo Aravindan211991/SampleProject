@@ -26,36 +26,9 @@ jobs:
         - name: Test with dotnet test
           run: dotnet test "SampleProject.csproj" --no-build --verbosity normal
           
-     #   - name: Upload Results JSON
-     #     uses: actions/upload-artifact@v4
-     #     with:
-      #      name: JSON Test Results
-       #     path: "./bin/Debug/net6.0/TestExecution.json"
-            
-        - name: git action adding JSON test report in repo
-          run: |
-               git config --global user.email "${{ secrets.GITHUBEMAIL }}"
-               git config --global user.name "${{ secrets.GITHUBUSERNAME }}"
-               git add .
-               git commit -m "Adding Latest Json Test execution report"
-               git config --global pull.ff only 
-               git push origin HEAD:master --force
-               
-        - name: create html living doc report from json
-          run: livingdoc feature-folder "SampleProject.csproj" -t "bin/Debug/net6.0/TestExecution.json
-          
-        - name: Upload living doc html reports
+        - name: Upload Results JSON
           uses: actions/upload-artifact@v4
           with:
-            name: HTML LD report
-            path: "bin/Debug/net6.0/TestExecution.json"
-            
-        - name: git action adding JSON test report in repo
-          run: |
-               git config --global user.email "${{ secrets.GITHUBEMAIL }}"
-               git config --global user.name "${{ secrets.GITHUBUSERNAME }}"
-               git add .
-               git commit -m "Adding Latest Json Test execution report"
-               git config --global pull.ff only 
-               git push origin HEAD:master --force
+              name: JSONResults
+              path: "bin/Debug/net6.0/TestExecution.json"
 
