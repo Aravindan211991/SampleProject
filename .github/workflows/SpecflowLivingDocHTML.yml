@@ -41,6 +41,18 @@ jobs:
           uses: actions/upload-artifact@v4
           with:
               name: LivingDocHTML
-              path: "LivingDoc.html"
+              path: "LivingDoc.html"  
+        
+        - name: Get artifact link
+          run: | 
+                 ARTIFACT_LINK="https://github.com/${GITHUB_REPOSITORY}/releases/tag/${GITHUB_RUN_ID}"
+                 echo "::set-output name=artifact_link::$ARTIFACT_LINK"
+        - name: Output artifact link
+          run: |
+                 echo "Artifact Link: $ARTIFACT_LINK"
+          id: output_link      
+
+
+              
                 
 
