@@ -1,8 +1,8 @@
 
 name: Junit dotnet package
 
-on: [push]
-  #pull_request:
+#on: [push]
+  pull_request:
    # types:
      # - opened
      # - synchronize
