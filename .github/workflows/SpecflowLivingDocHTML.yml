@@ -32,3 +32,6 @@ jobs:
               name: JSONResults
               path: "bin/Debug/net6.0/TestExecution.json"
 
+        - name: create html living doc report from json
+          run: livingdoc feature-folder "\Features\" -t "bin/Debug/net6.0/TestExecution.json"  
+
