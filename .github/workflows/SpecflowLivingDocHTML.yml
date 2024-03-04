@@ -26,11 +26,11 @@ jobs:
         - name: Test with dotnet test
           run: dotnet test "SampleProject.csproj" --no-build --verbosity normal
           
-        - name: Upload Results JSON
-          uses: actions/upload-artifact@v4
-          with:
-            name: JSON Test Results
-            path: "./bin/Debug/net6.0/TestExecution.json"
+     #   - name: Upload Results JSON
+     #     uses: actions/upload-artifact@v4
+     #     with:
+      #      name: JSON Test Results
+       #     path: "./bin/Debug/net6.0/TestExecution.json"
             
         - name: git action adding JSON test report in repo
           run: |
