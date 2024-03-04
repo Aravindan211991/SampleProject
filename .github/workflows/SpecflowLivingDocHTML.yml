@@ -44,13 +44,12 @@ jobs:
               path: "LivingDoc.html"  
         
         - name: Get artifact link
-          run: | 
-                 ARTIFACT_LINK="https://github.com/${GITHUB_REPOSITORY}/releases/tag/${GITHUB_RUN_ID}"
-                 echo "::set-output name=artifact_link::$ARTIFACT_LINK"
+          run: echo "{ARTIFACT_LINK}={https://github.com/${GITHUB_REPOSITORY}/releases/tag/${GITHUB_RUN_ID}}" >> $GITHUB_OUTPUT
+
+                 
         - name: Output artifact link
-          run: |
-                 echo "Artifact Link: $ARTIFACT_LINK"
-          id: output_link      
+          run: echo "$ARTIFACT_LINK"
+             
 
 
               
