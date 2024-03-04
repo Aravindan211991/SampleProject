@@ -17,19 +17,20 @@ jobs:
     steps:
         - uses: actions/checkout@v4
         - name: Setup .NET 6.x
-          uses: actions/setup-dotnet@v3
+          uses: actions/setup-dotnet@v4
           with:
             dotnet-version: '6.x'
         - name: Install dependencies
           run: dotnet restore
+          
         - name: Test with dotnet test
           run: dotnet test "SampleProject.csproj" --no-build --verbosity normal
           
-        - name: Upload dotnet test results
-          uses: actions/upload-artifact@v3
+        - name: Upload Results JSON
+          uses: actions/upload-artifact@v4
           with:
             name: JSON Test Results
-            path: "bin/Debug/net6.0/TestExecution.json"
+            path: "./bin/Debug/net6.0/TestExecution.json"
             
         - name: git action adding JSON test report in repo
           run: |
@@ -44,7 +45,7 @@ jobs:
           run: livingdoc feature-folder "SampleProject.csproj" -t "bin/Debug/net6.0/TestExecution.json
           
         - name: Upload living doc html reports
-          uses: actions/upload-artifact@v3
+          uses: actions/upload-artifact@v4
           with:
             name: HTML LD report
             path: "bin/Debug/net6.0/TestExecution.json"
