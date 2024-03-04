@@ -1,7 +1,6 @@
 name: SpecflowLivingDocHTMLReports
 
 on: 
-#[push]
   pull_request:
     types:
       - opened
@@ -9,7 +8,6 @@ on:
   
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       matrix:
