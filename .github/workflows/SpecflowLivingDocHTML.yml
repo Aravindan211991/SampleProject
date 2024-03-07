@@ -24,12 +24,6 @@ jobs:
           
         - name: Test with dotnet test
           run: dotnet test "SampleProject.csproj" --no-build --verbosity normal
-          
-        - name: Upload Results JSON
-          uses: actions/upload-artifact@v4
-          with:
-              name: JSONTestResults
-              path: "bin/Debug/net6.0/TestExecution.json"
 
         - name: create html living doc report from json
           run: |
