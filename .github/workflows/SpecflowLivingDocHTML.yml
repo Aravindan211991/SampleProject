@@ -55,8 +55,8 @@ jobs:
           id: get-issue-key
           run: | 
                 echo "issue-key=$(echo ${{ github.event.pull_request.title }} | sed 's/^\\[\\(\\w\\+-\\d+\\)\\].*/\\1/')" >> $GITHUB_OUTPUT
-                split_title = issue-key.split("|")
-                echo "split titleee : $split_title"
+                split_title = github.event.pull_request.title.split("|")
+                echo "split titleee: $split_title"
         - name: Check issue key value
           run: echo ${{ steps.get-issue-key.outputs.issue-key }}
         
