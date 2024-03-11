@@ -59,6 +59,7 @@ jobs:
                echo "First part: ${TITLE_PARTS[0]}"
                echo "Second part: ${TITLE_PARTS[1]}"
                echo "issue-key=$(echo ${{ github.event.pull_request.title }} | sed 's/^\\[\\(\\w\\+-\\d+\\)\\].*/\\1/')" >> $GITHUB_OUTPUT
+        
         - name: Check issue key value
           run: echo ${{ steps.get-issue-key.outputs.issue-key }}
         
