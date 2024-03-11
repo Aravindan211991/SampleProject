@@ -54,9 +54,11 @@ jobs:
         - name: Get Jira issue key
           id: get-issue-key
           run: | 
-                title_parts = $(${{ github.event.pull_request.title }})
-                split_title = title_parts.split("|")
-                echo "issue-key=$(echo ${{ github.event.pull_request.title }} | sed 's/^\\[\\(\\w\\+-\\d+\\)\\].*/\\1/')" >> $GITHUB_OUTPUT
+               PR_TITLE="${{ github.event.pull_request.title }}"
+               IFS='|' read -ra TITLE_PARTS <<< "$PR_TITLE"
+               echo "First part: ${TITLE_PARTS[0]}"
+               echo "Second part: ${TITLE_PARTS[1]}"
+               echo "issue-key=$(echo ${{ github.event.pull_request.title }} | sed 's/^\\[\\(\\w\\+-\\d+\\)\\].*/\\1/')" >> $GITHUB_OUTPUT
         - name: Check issue key value
           run: echo ${{ steps.get-issue-key.outputs.issue-key }}
         
