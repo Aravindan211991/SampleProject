@@ -54,7 +54,7 @@ jobs:
         - name: Get Jira issue key
           id: get-issue-key
           run: | 
-                title_parts = ${{ github.event.pull_request.title }}
+                title_parts = $(${{ github.event.pull_request.title }})
                 split_title = title_parts.split("|")
                 echo "split titleee: $split_title"
                 echo "issue-key=$(echo ${{ github.event.pull_request.title }} | sed 's/^\\[\\(\\w\\+-\\d+\\)\\].*/\\1/')" >> $GITHUB_OUTPUT
