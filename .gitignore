@@ -29,3 +29,7 @@ bld/
 test-results.xml
 file.txt
 /.vs/OnbePOC/FileContentIndex/dc8e80fd-b884-4c53-8068-85b78ebd849f.vsidx
+*.sqlite
+/.vs/SampleProject/v17/.suo
+/.gitignore
+/.gitignore

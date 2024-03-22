@@ -22,21 +22,19 @@ namespace SampleProject
             
         }
 
-        [Then(@"Response should be false")]
-        public void ThenResponseShouldBeFalse()
+        [Then(@"Response should be '([^']*)'")]
+        public void ThenResponseShouldBeFalse(bool success)
         {
             var result = AuthenticateUsers.AuthenticateUser(_userName, _password);
-            result.Should().Be(false);
+            result.Should().Be(success);
             
         }
 
-        [Then(@"Response should be True")]
-        public void ThenResponseShouldBeTrue()
+        [Then(@"Logged in Successfully")]
+        public void ThenLoggedInSuccessfully()
         {
-            var result = AuthenticateUsers.AuthenticateUser(_userName, _password);
-            result.Should().Be(true);
-        }
 
+        }
 
     }
 }
