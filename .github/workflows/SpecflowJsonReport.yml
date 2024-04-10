@@ -6,31 +6,30 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+    strategy:
+      matrix:
+        dotnet-version: [ '6.0.x' ]
+
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
-      
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '6.1.x' # Adjust to the version of .NET used in your project
+        - uses: actions/checkout@v4
+        
+        - name: Setup .NET 6.x
+          uses: actions/setup-dotnet@v3
+          with:
+            dotnet-version: '6.x'
+            
+        - name: Install dependencies
+          run: dotnet restore
+          
+        - name: Test with dotnet test
+          run: dotnet test --configuration Release --logger:trx;LogFileName=test_results.trx /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
 
-    - name: Restore Dependencies
-      run: dotnet restore
+        - name: Generate SpecFlow JSON Report
+          run: dotnet specflow generateall --format=json
+          working-directory: ./path/to/specflow/project
 
-    - name: Build Project
-      run: dotnet build --configuration Release
-
-    - name: Run SpecFlow Tests
-      run: dotnet test --configuration Release --logger:trx;LogFileName=test_results.trx /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
-
-    - name: Generate SpecFlow JSON Report
-      run: dotnet specflow generateall --format=json
-      working-directory: ./path/to/specflow/project
-
-    - name: Upload SpecFlow JSON Report
-      uses: actions/upload-artifact@v2
-      with:
-        name: specflow-json-report
-        path: ./path/to/specflow/project/*.json
+        - name: Upload SpecFlow JSON Report
+          uses: actions/upload-artifact@v3
+          with:
+            name: specflow-json-report
+            path: ./path/to/specflow/project/*.json
