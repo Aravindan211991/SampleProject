@@ -26,7 +26,7 @@ jobs:
 
         - name: Generate SpecFlow JSON Report
           run: dotnet specflow generateall --format=json
-          working-directory: ./path/to/specflow/project
+          working-directory: /home/runner/work/SampleProject/SampleProject/TestResults/
 
         - name: Upload SpecFlow JSON Report
           uses: actions/upload-artifact@v3
