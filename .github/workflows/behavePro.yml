@@ -18,6 +18,16 @@ jobs:
             dotnet-version: '6.x'
         - name: Install dependencies
           run: dotnet restore
+          
+        - name: git action adding test report
+          run: |
+               git config --global user.email "${{ secrets.GITHUBEMAIL }}"
+               git config --global user.name "${{ secrets.GITHUBUSERNAME }}"
+               git add .
+               git commit -m "Adding latest specflow json report"
+               git config --global pull.ff only 
+               git push origin HEAD:main --force  
+          
         - name: Test with dotnet test
           run: dotnet test "SampleProject.csproj" --no-build --verbosity normal
 
