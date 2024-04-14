@@ -1,4 +1,4 @@
-name: Connect Github with BehavePro1
+name: Connect Github with BehavePro
 
 on: push
   
@@ -16,8 +16,9 @@ jobs:
           uses: actions/setup-dotnet@v3
           with:
             dotnet-version: '6.x'
-        - name: Install dependencies
-          run: dotnet restore
+            
+        # - name: Install dependencies
+        #   run: dotnet restore
           
         - name: git action adding test report
           run: |
