@@ -13,7 +13,7 @@ jobs:
     steps:
         - uses: actions/checkout@v4
         - name: Setup .NET 6.x
-          uses: actions/setup-dotnet@v3
+          uses: actions/setup-dotnet@v4
           with:
             dotnet-version: '6.x'
             
@@ -24,10 +24,10 @@ jobs:
           run: dotnet test "SampleProject.csproj" --no-build --verbosity normal
 
         - name: Upload dotnet test results
-          uses: actions/upload-artifact@v3
+          uses: actions/upload-artifact@v4
           with:
             name: dotnet-results-${{ matrix.dotnet-version }}
-            path: "/home/runner/work/SampleProject/SampleProject/bin/Debug/net6.0/TestExecution.json"
+            path: "bin/Debug/net6.0/TestExecution.json"
 
         - name: git action adding test report
           run: |
@@ -36,7 +36,7 @@ jobs:
                git add .
                git commit -m "Adding latest specflow json report"
                git config --global pull.ff only 
-               git push origin HEAD:main --force  
+               git push origin HEAD:master --force  
 
         - name: Posting report to jira with BehavePro
           run: |
