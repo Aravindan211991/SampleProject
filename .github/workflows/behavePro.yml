@@ -37,7 +37,7 @@ jobs:
         - name: Posting report to jira with BehavePro
           run: |
                curl -L -X PUT https://test-reports.behave.pro/REST/1.0/bdd/report \
-               -H "X-API-KEY: MmQ1MDFmMmMtYjFkYS00YWM5LWFiYTgtZmU5ZjVlZTZiYTc2LmtjM3lzQVB2U3hZSXk1R0VNQ3Fk" \
-               -H "X-COMMIT-ID: ${{ github.sha }}" \
-               --data-binary @bin/Debug/net6.0/TestExecution.json
+               -H "X-API-KEY: "${{ secrets.BEHAVEPROAPIKEY }}" \
+               -H "X-COMMIT-ID: ${ github.sha }" \
+               --data-binary @"bin/Debug/net6.0/TestExecution.json"
           
