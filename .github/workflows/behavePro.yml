@@ -12,10 +12,6 @@ jobs:
 
     steps:
         - uses: actions/checkout@v4
-        - name: Setup .NET 6.x
-          uses: actions/setup-dotnet@v4
-          with:
-            dotnet-version: '6.x'
             
         - name: Install dependencies
           run: dotnet restore
@@ -43,5 +39,5 @@ jobs:
                curl -L -X PUT https://test-reports.behave.pro/REST/1.0/bdd/report \
                -H "X-API-KEY: MmQ1MDFmMmMtYjFkYS00YWM5LWFiYTgtZmU5ZjVlZTZiYTc2LmtjM3lzQVB2U3hZSXk1R0VNQ3Fk" \
                -H "X-COMMIT-ID: ${{ github.sha }}" \
-               --data-binary @/home/runner/work/SampleProject/SampleProject/bin/Debug/net6.0/TestExecution.json
+               --data-binary @bin/Debug/net6.0/TestExecution.json
           
