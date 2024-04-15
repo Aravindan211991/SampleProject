@@ -38,6 +38,6 @@ jobs:
           run: |
                curl -L -X PUT https://test-reports.behave.pro/REST/1.0/bdd/report \
                -H "X-API-KEY: ${{ secrets.BEHAVEPROAPIKEY }}" \
-               -H "X-COMMIT-ID: ${ github.sha }" \
+               -H "X-COMMIT-ID: ${{ github.sha }}" \
                --data-binary @bin/Debug/net6.0/TestExecution.json
           
