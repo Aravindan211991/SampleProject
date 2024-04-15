@@ -17,8 +17,8 @@ jobs:
           with:
             dotnet-version: '6.x'
             
-        # - name: Install dependencies
-        #   run: dotnet restore
+        - name: Install dependencies
+          run: dotnet restore
                    
         - name: Test with dotnet test
           run: dotnet test "SampleProject.csproj" --no-build --verbosity normal
