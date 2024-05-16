@@ -1,4 +1,4 @@
-name: SpecflowLivingDocHTMLReports
+name: SpecflowLivingDocHTMLReportsNew
 
 on: 
   pull_request:
