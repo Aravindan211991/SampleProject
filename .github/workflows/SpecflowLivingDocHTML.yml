@@ -5,6 +5,9 @@ on:
     types:
       - opened
       - synchronize
+  workflow_dispatch:
+  push:
+    branches: ["master"]
   
 jobs:
   build:
