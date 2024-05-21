@@ -1,8 +1,12 @@
 name: SpecflowLivingDocHTMLReports
 
 on: 
-  push
+  pull_request:
+    types:
+      - opened
+      - synchronize
 
+  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -44,3 +48,42 @@ jobs:
           with:
               name: LivingDocHTML
               path: "LivingDoc.html"  
+
+        - name: Get Artifact ID
+          id: get_artifact_id
+          run: |
+                ARTIFACT_ID=$(curl -s -H "Authorization: Bearer ${{secrets.GITHUB_TOKEN}}" \
+                        "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts" \
+                        | jq -r '.artifacts[0].id')
+                echo "ARTIFACT_ID=$ARTIFACT_ID" >> $GITHUB_ENV
+
+        
+        - name: Get artifact link
+          run: echo "ARTIFACT_LINK={https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts/${ARTIFACT_ID}}" >> $GITHUB_ENV
+       
+        - name: Output artifact link
+          run: echo "$ARTIFACT_LINK"
+             
+        - name: Get Jira issue key
+          id: get-issue-key
+          run: | 
+               title="${{ github.event.pull_request.title }}"
+               IFS='|' read -ra title_parts <<< "$title"
+               echo "issue-key=$(echo ${title_parts[0]} | sed 's/^\\[\\(\\w\\+-\\d+\\)\\].*/\\1/')" >> $GITHUB_OUTPUT
+  
+        - name: Check issue key value
+          run: echo ${{ steps.get-issue-key.outputs.issue-key }}
+        
+        - name: Login
+          uses: atlassian/gajira-login@v3
+          env:
+             JIRA_BASE_URL: https://onbe-sandbox-213.atlassian.net
+             JIRA_USER_EMAIL: ${{ secrets.GITHUBEMAIL }}
+             JIRA_API_TOKEN: ${{ secrets.JIRAAPITOKEN }}
+
+          
+        - name: Jira Add Comment with github page link
+          uses: atlassian/gajira-comment@v3
+          with:
+           issue: ${{ steps.get-issue-key.outputs.issue-key }}
+           comment: Check Report in the git artifact link - https://aravindan211991.github.io/SampleProject/LivingDoc.html
