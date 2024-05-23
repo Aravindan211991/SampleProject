@@ -2,7 +2,7 @@
 
 Verify login feature for the application
 
-@SmokeTest
+@SmokeTest1
 Scenario: Verify that is not able to login with invalid credentials
 	Given User enters 'username' and 'password'
 	When User clicks on login
