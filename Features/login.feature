@@ -1,6 +1,6 @@
 ﻿Feature: Test user login
 
-Verify login feature for the application
+#Verify login feature for the application
 
 @SmokeTest
 Scenario: Verify that user is not able to login with invalid credentials
