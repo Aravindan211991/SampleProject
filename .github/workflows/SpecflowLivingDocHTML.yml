@@ -86,6 +86,6 @@ jobs:
           uses: atlassian/gajira-comment@v3
           with:
            issue: ${{ steps.get-issue-key.outputs.issue-key }}
-           comment: Check Report in the git artifact link - https://aravindan211991.github.io/SampleProject/LivingDoc.html
+           comment: Check Test Report in the git pages link - https://aravindan211991.github.io/SampleProject/LivingDoc.html
 
            
