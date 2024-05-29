@@ -36,3 +36,9 @@ file.txt
 /test-user-login.feature.cs
 /.vs/Onbe_Specflow_Report_POC/v17/DocumentLayout.json
 /.vs/Onbe_Specflow_Report_POC/v17/.wsuo
+/.vs/Onbe_Specflow_Report_POC
+/obj/Debug/net6.0/SampleProject.AssemblyInfo.cs
+/obj/Debug/net6.0/SampleProject.AssemblyInfoInputs.cache
+/obj/Debug/net6.0/SampleProject.assets.cache
+/.vs/SampleProject/v17/.futdcache.v2
+/obj/Debug/net6.0/SampleProject.GeneratedMSBuildEditorConfig.editorconfig
