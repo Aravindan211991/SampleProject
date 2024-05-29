@@ -20,7 +20,7 @@ namespace SampleProject
         public void WhenUserClicksOnLogin()
         {
 
-            Console.WriteLine("Login Test Step for this scenerio");
+            Console.WriteLine("Login Test Step for this scenerios");
 
         }
 
