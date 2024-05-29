@@ -1,3 +1,4 @@
+@OPEN
 Feature: Test user login
 
   @SCRUM-2 @OPEN

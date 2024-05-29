@@ -1,6 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lW+y1cMyVBbLmNzSjCXaAANBU7WTAbSrTAOsy1Ly92mYxNHRFWMY9XleLZ/siHe1rVUF7yMN9EiSnpk7kkVsuw==",
+
+  "dgSpecHash": "LqZbM7R+O5w=",
+
   "success": true,
   "projectFilePath": "/home/runner/work/SampleProject/SampleProject/SampleProject.csproj",
   "expectedPackageFiles": [

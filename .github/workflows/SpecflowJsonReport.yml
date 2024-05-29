@@ -1,4 +1,4 @@
-name: SpecflowJsonReport
+name: SpecflowJsonReportTest
 
 on:
   push
