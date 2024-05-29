@@ -20,7 +20,7 @@ namespace SampleProject
         public void WhenUserClicksOnLogin()
         {
 
-            Console.WriteLine("Login Test");
+            Console.WriteLine("Login Test Step");
 
         }
 
@@ -34,6 +34,11 @@ namespace SampleProject
 
         [Then(@"Logged in Successfully")]
         public void ThenLoggedInSuccessfully()
+        {
+
+        }
+
+        public void testMethod()
         {
 
         }
