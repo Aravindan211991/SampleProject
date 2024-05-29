@@ -1,26 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "/home/runner/work/SampleProject/SampleProject/SampleProject.csproj": {}
+    "C:\\Users\\PPoddar\\Documents\\Onbe_Specflow_Report_POC\\SampleProject.csproj": {}
   },
   "projects": {
-    "/home/runner/work/SampleProject/SampleProject/SampleProject.csproj": {
+    "C:\\Users\\PPoddar\\Documents\\Onbe_Specflow_Report_POC\\SampleProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/runner/work/SampleProject/SampleProject/SampleProject.csproj",
+        "projectUniqueName": "C:\\Users\\PPoddar\\Documents\\Onbe_Specflow_Report_POC\\SampleProject.csproj",
         "projectName": "SampleProject",
-        "projectPath": "/home/runner/work/SampleProject/SampleProject/SampleProject.csproj",
-        "packagesPath": "/home/runner/.nuget/packages/",
-        "outputPath": "/home/runner/work/SampleProject/SampleProject/obj/",
+        "projectPath": "C:\\Users\\PPoddar\\Documents\\Onbe_Specflow_Report_POC\\SampleProject.csproj",
+        "packagesPath": "C:\\Users\\PPoddar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PPoddar\\Documents\\Onbe_Specflow_Report_POC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/runner/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\PPoddar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.pkg.github.com/Onbe/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -104,7 +107,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.300/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

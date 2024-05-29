@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SampleProject.Features
+namespace SampleProject
 {
     using TechTalk.SpecFlow;
     using System;
@@ -28,7 +28,7 @@ namespace SampleProject.Features
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "login.feature"
+#line 1 "test-user-login.feature"
 #line hidden
         
         public TestUserLoginFeature(TestUserLoginFeature.FixtureData fixtureData, SampleProject_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
@@ -40,7 +40,7 @@ namespace SampleProject.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Test user login", "Verify login feature for the application", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "", "Test user login", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -83,15 +83,17 @@ namespace SampleProject.Features
         [Xunit.SkippableFactAttribute(DisplayName="Verify that is not able to login with invalid credentials")]
         [Xunit.TraitAttribute("FeatureTitle", "Test user login")]
         [Xunit.TraitAttribute("Description", "Verify that is not able to login with invalid credentials")]
-        [Xunit.TraitAttribute("Category", "SmokeTest")]
+        [Xunit.TraitAttribute("Category", "SCRUM-2")]
+        [Xunit.TraitAttribute("Category", "OPEN")]
         public void VerifyThatIsNotAbleToLoginWithInvalidCredentials()
         {
             string[] tagsOfScenario = new string[] {
-                    "SmokeTest"};
+                    "SCRUM-2",
+                    "OPEN"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify that is not able to login with invalid credentials", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 6
-this.ScenarioInitialize(scenarioInfo);
+#line 4
+  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -100,47 +102,17 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+#line 5
+    testRunner.Given("User enters \'username\' and \'password\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 6
+    testRunner.When("User clicks on login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
 #line 7
- testRunner.Given("User enters \'username\' and \'password\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Then("Response should be \'false\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 8
- testRunner.When("User clicks on login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 9
- testRunner.Then("Response should be \'false\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [Xunit.SkippableFactAttribute(DisplayName="Verify that user is able to login with valid credentials")]
-        [Xunit.TraitAttribute("FeatureTitle", "Test user login")]
-        [Xunit.TraitAttribute("Description", "Verify that user is able to login with valid credentials")]
-        [Xunit.TraitAttribute("Category", "SmokeTest2")]
-        public void VerifyThatUserIsAbleToLoginWithValidCredentials()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "SmokeTest2"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify that user is able to login with valid credentials", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 12
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 13
- testRunner.Given("User enters \'Aravindan\' and \'Kaiv\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 14
- testRunner.When("User clicks on login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 15
- testRunner.Then("Response should be \'True\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.And("Logged in Successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
