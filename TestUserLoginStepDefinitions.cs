@@ -19,7 +19,7 @@ namespace SampleProject
         [When(@"User clicks on login")]
         public void WhenUserClicksOnLogin()
         {
-            
+            Console.WriteLine("Login Test");
         }
 
         [Then(@"Response should be '([^']*)'")]
