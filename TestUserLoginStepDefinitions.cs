@@ -36,5 +36,10 @@ namespace SampleProject
 
         }
 
+        public void testMethod()
+        {
+
+        }
+
     }
 }
