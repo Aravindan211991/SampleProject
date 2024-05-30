@@ -40,7 +40,7 @@ namespace SampleProject
 
         public void testMethod()
         {
-
+            Console.WriteLine("test");
         }
 
     }
