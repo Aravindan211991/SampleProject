@@ -11,7 +11,6 @@ public static class AuthenticateUsers
         if (username != UName && password != PWD)
         {
             return false;
-            return true;
         }
         else 
         { 
