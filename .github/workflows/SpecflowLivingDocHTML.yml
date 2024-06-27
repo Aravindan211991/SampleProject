@@ -6,7 +6,6 @@ on:
       - opened
       - synchronize
 
-  
 jobs:
   build:
     runs-on: ubuntu-latest
